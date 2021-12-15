@@ -11,7 +11,7 @@ for x in range(len(df)):
 
 m = []
 mx = 0
-bs = 256
+bs = 8
 for x in range(len(df)):
     s = df[x].split(",")
     d = [0] * len(s)
