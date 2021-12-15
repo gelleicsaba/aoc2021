@@ -11,7 +11,7 @@ for x in range(len(df)):
 
 m = []
 mx = 0
-bs = 256
+bs = 8
 for x in range(len(df)):
     s = df[x].split(",")
     d = [0] * len(s)
@@ -39,17 +39,31 @@ for x in range(len(df)):
         else:
             pm = y2
             px = y1
-        for y in range(pm,px+1):
+        for y in range(pm, px + 1):
             t[y][x1] = t[y][x1] + 1
-    if y1 == y2:
+    elif y1 == y2:
         if x1 <= x2:
             pm = x1
             px = x2
         else:
             pm = x2
             px = x1
-        for y in range(pm,px+1):
+        for y in range(pm, px + 1):
             t[y1][y] = t[y1][y] + 1
+    elif abs(x2 - x1) == abs(y2 - y1):
+        px = abs(x2 - x1)
+        if (x1 < x2 and y1 < y2):
+            for a in range(px+1):
+                t[y1 + a][x1 + a] = t[y1 + a][x1 + a] + 1
+        elif (x2 < x1 and y2 < y1):
+            for a in range(px+1):
+                t[y2 + a][x2 + a] = t[y2 + a][x2 + a] + 1
+        elif (x1 < x2 and y1 > y2):
+            for a in range(px+1):
+                t[y2 + a][x2 - a] = t[y2 + a][x2 - a] + 1
+        elif (x2 < x1 and y2 > y1):
+            for a in range(px+1):
+                t[y1 + a][x1 - a] = t[y1 + a][x1 - a] + 1
 
 sm = 0
 for a in range(mx):
@@ -57,8 +71,24 @@ for a in range(mx):
         if t[a][b] > 1:
             sm = sm + 1
 
+"""
+def rajzol(t,mx):
+    for a in range(mx):
+        s = ""
+        for b in range(mx):
+            if (t[a][b] == 0):
+                s = s + '.'
+            else:
+                s = s + str(t[a][b])                
+        print(s)
+    return
+
+rajzol(t,mx)
+"""
+
 print("The result:",sm)
 
+            
 
 
 
