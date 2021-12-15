@@ -1,5 +1,10 @@
-with open("./Day-3_Binary Diagnostic.txt", "r") as f:
-#with open("./Day-3_Binary Diagnostic-example.txt", "r") as f:
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import os
+
+with open(os.path.dirname(os.path.abspath(__file__)) + "/input/my-input.txt", "r") as f:
+#with open(os.path.dirname(os.path.abspath(__file__)) + "/input/example.txt", "r") as f:
     df = f.readlines()
 h = len(df[0].strip())
 dl = len(df)

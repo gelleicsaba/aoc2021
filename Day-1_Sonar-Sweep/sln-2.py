@@ -1,6 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import os
 import numpy as np
-df = np.loadtxt('./Day-1_Sonar-Sweep.txt')
-#df = np.loadtxt('./Day-1_Sonar-Sweep-example.txt')
+
+df = np.loadtxt(os.path.dirname(os.path.abspath(__file__)) + "/input/my-input.txt")
+#df = np.loadtxt(os.path.dirname(os.path.abspath(__file__)) + "/input/example.txt")
 p = 0
 inc = 0
 for x in range(len(df)-2):
