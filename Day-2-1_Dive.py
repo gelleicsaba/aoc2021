@@ -1,5 +1,5 @@
-#with open("Day-2_Dive!-example.txt", "r") as f:
-with open("Day-2_Dive!.txt", "r") as f:
+#with open("./Day-2_Dive!-example.txt", "r") as f:
+with open("./Day-2_Dive!.txt", "r") as f:
     df = f.readlines()
 h = 0
 d = 0

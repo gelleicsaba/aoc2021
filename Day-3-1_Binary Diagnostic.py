@@ -1,5 +1,5 @@
-with open("Day-3_Binary Diagnostic.txt", "r") as f:
-#with open("Day-3_Binary Diagnostic-example.txt", "r") as f:
+with open("./Day-3_Binary Diagnostic.txt", "r") as f:
+#with open("./Day-3_Binary Diagnostic-example.txt", "r") as f:
     df = f.readlines()
 h = len(df[0].strip())
 dl = len(df)

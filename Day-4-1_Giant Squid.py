@@ -1,5 +1,5 @@
-with open("Day-4-1_Giant Squid.txt", "r") as f:
-#with open("Day-4-1_Giant Squid-example.txt", "r") as f:
+with open("./Day-4-1_Giant Squid.txt", "r") as f:
+#with open("./Day-4-1_Giant Squid-example.txt", "r") as f:
     df = f.readlines()
 for x in range(len(df)):
     df[x] = df[x].strip().replace("  "," ")
@@ -34,8 +34,6 @@ m.append(tmp)
 marks = [None] * len(m)
 for x in range(len(m)):
     marks[x] = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]
-
-veg = False
 
 # talált sor,oszlop,mátrix
 tn = -1
@@ -74,31 +72,3 @@ for x in range(5):
             sm = sm + m[tm][x][y]
 
 print("The result:", (sm * tn) )
-
-
-
-
-            
-                
-
-                
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

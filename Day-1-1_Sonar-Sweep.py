@@ -1,5 +1,6 @@
 import numpy as np
-df = np.loadtxt('Day-1_Sonar-Sweep.txt')
+df = np.loadtxt('./Day-1_Sonar-Sweep.txt')
+#df = np.loadtxt('./Day-1_Sonar-Sweep-example.txt')
 p = 0
 inc = 0
 for x in range(len(df)):
