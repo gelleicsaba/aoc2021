@@ -3,39 +3,26 @@
 
 import os
 
-#with open(os.path.dirname(os.path.abspath(__file__)) + "/input/my-input.txt", "r") as f:
-with open(os.path.dirname(os.path.abspath(__file__)) + "/input/example.txt", "r") as f:
+with open(os.path.dirname(os.path.abspath(__file__)) + "/input/my-input.txt", "r") as f:
+#with open(os.path.dirname(os.path.abspath(__file__)) + "/input/example.txt", "r") as f:
     df = f.readlines()
 
 df = df[0].strip().split(',')
-m = []
+m = [0] * 9
 for x in range(len(df)):
-    q = (int)(df[x])
-    m.append(q)
-
-print("base: ", m)
-
-ln = 256
-cn = len(m)
-for x in range(ln):
-    cf = 0
-    for y in range(len(m)):
-        if m[y] > 1:
-            m[y] = m[y] - 1
-        elif m[y] == 1:
-            m[y] = 0
-            cf = cf + 1
-
-    cn = cn + cf
-    #print("",(x+1),"day: ",m)
-    print(" ",x+1,"  ",cn)
-    if (x == ln-1):
-        break
-    for q in range(len(m)):
-        if m[q] == 0:
-            m[q] = 7
-    for q in range(cf):
-        m.append(9)
-
-print("The result:",cn)
-
+    y = (int)(df[x])
+    m[y] = m[y] + 1
+cn = len(df)
+nf = 0
+for x in range(256):
+    # shift
+    for y in range(8):
+        m[y] = m[y + 1]
+    m[8] = 0
+    # from 0 add 6 & 8
+    if nf > 0:
+        m[6] = m[6] + nf
+        m[8] = m[8] + nf
+        cn = cn + nf
+    nf = m[0]
+print("The result:", cn)

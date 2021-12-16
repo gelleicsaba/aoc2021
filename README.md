@@ -10,3 +10,4 @@
 
 #### Day 5. - Hydrothermal Venture
 
+#### Day 6. - Lanternfish
