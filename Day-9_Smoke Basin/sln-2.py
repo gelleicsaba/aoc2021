@@ -55,7 +55,6 @@ for y in range(ly):
 
 #rajz(mc)
 idc = idc - 1
-
 i = 0
 s = [0] * idc
 for a in range(idc):
