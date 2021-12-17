@@ -66,13 +66,7 @@ for a in range(idc):
     s[i] = n
     i = i + 1
 
-for a in range(idc):
-    for b in range(idc - 1):
-        if s[b] < s[b + 1]:
-            tmp = s[b]
-            s[b] = s[b + 1]
-            s[b + 1] = tmp
-
+s = sorted(s, reverse=True)
 print("The result:", (s[0] * s[1] * s[2]))
 
 
