@@ -33,6 +33,7 @@ def basin(y,x):
     basin(y-1,x)
     return
 
+"""
 def rajz(k):
     for y in range(ly):
         s = "";
@@ -44,7 +45,7 @@ def rajz(k):
                 s = s + '0'
             s = s + str(q) + " "
         print(s)
-
+"""
 
 for y in range(ly):
     for x in range(lx):
@@ -52,7 +53,7 @@ for y in range(ly):
             basin(y,x)
             idc = idc + 1
 
-rajz(mc)
+#rajz(mc)
 idc = idc - 1
 
 i = 0
