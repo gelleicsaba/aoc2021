@@ -14,7 +14,7 @@ ly = len(df)
 lx = len(df[0])
 
 for y in range(ly):
-    mm = [0] * len(df[y])
+    mm = [0] * lx
     for x in range(lx):
         mm[x] = int(df[y][x])
     m[y] = mm
