@@ -18,15 +18,17 @@ for x in range(len(m)):
     if m[x] > mx:
         mx = m[x]
 s = [0] * (mx+1)
-f = [0] * (mx+1)
-d = 0
-for x in range(mx+1):
-    d = d + x
-    f[x] = d
+#f = [0] * (mx+1)
+#d = 0
+#for x in range(mx+1):
+#    d = d + x
+#    f[x] = d
+
 for x in range(mn,mx+1):
     sm = 0
     for y in range(len(m)):
-        sm = sm + f[abs(m[y] - x)]
+        n = abs(m[y] - x)
+        sm = sm + ( (n * (n+1)) // 2)
     s[x] = sm
 rs = 9999999999
 for x in range(mn,mx+1):
